@@ -1,10 +1,11 @@
 package homeauto.entities;
 
-public class Category {
+
+public class Store {
     int id;
     String name;
 
-    public Category(int id, String name) {
+    public Store(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -24,4 +25,5 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
 }

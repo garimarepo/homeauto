@@ -6,20 +6,19 @@ import java.util.List;
 
 
 public class Member {
-    public int add(String name)
-    {
+    public int add(String name) {
         return 0;
     }
-    public boolean update(int id,String name)
-    {
+
+    public boolean update(int id, String name) {
         return false;
     }
-    public boolean delete(int id)
-    {
+
+    public boolean delete(int id) {
         return false;
     }
-    public List<Category> getAllMembers()
-    {
+
+    public List<Category> getAllMembers() {
         return null;
     }
 }

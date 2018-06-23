@@ -7,19 +7,19 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 
-public class CategoryDao {
-    public List<Category> getAllCategories() {
+public class StoreDao {
+    public List<Store> getAllStores() {
         try {
             Session session = SessionUtil.getSession();
-            Query query = session.createQuery("from Category");
-
-            List<Category> categoryList = query.list();
+            Query query = session.createQuery("from Store");
+            List<Store> storeList = query.list();
             session.close();
-            return categoryList;
-
+            return storeList;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
+
+
     }
 }

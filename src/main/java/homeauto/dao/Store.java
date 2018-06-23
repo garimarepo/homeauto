@@ -1,14 +1,13 @@
 package homeauto.dao;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "store_name")
+public class Store {
     @Column
     @Id
     private int id;
@@ -31,7 +30,9 @@ public class Category {
         this.name = name;
     }
 
-    public homeauto.entities.Category getCategory() {
-        return new homeauto.entities.Category(id, name);
+    public homeauto.entities.Store getStore() {
+        return new homeauto.entities.Store(id, name);
     }
+
+
 }
