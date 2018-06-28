@@ -1,6 +1,7 @@
 package homeauto.resource;
 
-import homeauto.dao.StoreDao;
+
+import homeauto.dao.NamesDao;
 import homeauto.entities.DaoMapping;
 
 import javax.ws.rs.GET;
@@ -9,9 +10,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+@Path("names")
 
-@Path("stores")
-public class Store {
+public class Names {
     public int add(String name) {
         return 0;
     }
@@ -26,10 +27,9 @@ public class Store {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<homeauto.entities.Store> getAllStores() {
-        StoreDao dao;
-        dao = new StoreDao();
-        return DaoMapping.getAllStores(dao.getAllStore());
+    public List<homeauto.entities.Names> getAllNames() {
+        NamesDao dao;
+        dao = new NamesDao();
+        return DaoMapping.getAllNames(dao.getAllNames());
     }
 }
-

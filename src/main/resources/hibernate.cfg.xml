@@ -13,5 +13,7 @@
         <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
         <mapping class="homeauto.dao.Category"/>
         <mapping class="homeauto.dao.Store"/>
+        <mapping class="homeauto.dao.Names"/>
+        <mapping class="homeauto.dao.Transactions"/>
     </session-factory>
 </hibernate-configuration>

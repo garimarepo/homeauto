@@ -23,4 +23,23 @@ public class DaoMapping {
 
         return stores;
     }
+
+    public static List<homeauto.entities.Names> getAllNames(List<homeauto.dao.Names> daoNames) {
+        List<homeauto.entities.Names> names = new ArrayList<homeauto.entities.Names>();
+        for (homeauto.dao.Names nm : daoNames)
+            names.add(nm.getNames());
+        return names;
+
+    }
+
+    public static List<homeauto.entities.Transaction> getAllTransactions(List<homeauto.dao.Transactions> daoTransactions) {
+
+        List<homeauto.entities.Transaction> transactions = new ArrayList<homeauto.entities.Transaction>();
+
+        for (homeauto.dao.Transactions t : daoTransactions)
+            transactions.add(t.getTransactions());
+
+        return transactions;
+    }
 }
+
