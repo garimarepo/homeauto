@@ -22,4 +22,13 @@ public class NamesDao {
         }
         return null;
     }
+    public void createName(String member)
+    {
+        Session session=SessionUtil.getSession();
+        session.getTransaction().begin();
+        Names mem=new Names();
+        mem.setName(member);
+        session.save(mem);
+        session.getTransaction().commit();
+    }
 }

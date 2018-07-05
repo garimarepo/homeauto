@@ -4,9 +4,7 @@ import homeauto.dao.TransactionDao;
 import homeauto.entities.DaoMapping;
 import homeauto.entities.Transaction;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -34,5 +32,14 @@ public class ResourceTransaction {
         dao = new TransactionDao();
         return DaoMapping.getAllTransactions(dao.getAllTransactions());
     }
+    @PUT
+    @Path("{amount}/{payDate}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void createTransaction(@PathParam("amount") String amount,@PathParam("payDate") String payDate)
+    {
+        TransactionDao dao=new TransactionDao();
+        dao.createTransaction(amount,payDate);
+    }
+
 }
 

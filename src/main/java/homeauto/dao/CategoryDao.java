@@ -4,6 +4,7 @@ import homeauto.resource.SessionUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 
@@ -22,4 +23,18 @@ public class CategoryDao {
         }
         return null;
     }
+
+
+
+    public void createCategory(String name)
+    {
+        Session session = SessionUtil.getSession();
+        session.getTransaction().begin();
+        Category cat = new Category();
+        cat.setName(name);
+        session.save(cat);
+        session.getTransaction().commit();
+
+    }
+
 }

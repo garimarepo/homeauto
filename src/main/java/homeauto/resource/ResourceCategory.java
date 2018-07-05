@@ -4,9 +4,7 @@ import homeauto.dao.CategoryDao;
 import homeauto.entities.Category;
 import homeauto.entities.DaoMapping;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -31,6 +29,17 @@ public class ResourceCategory {
         CategoryDao dao = new CategoryDao();
         return DaoMapping.getAllCategories(dao.getAllCategories());
     }
+
+    @PUT
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void createCategory(@PathParam("name") String name)
+    {
+        CategoryDao dao = new CategoryDao();
+        dao.createCategory(name);
+
+    }
+
 
 }
 
