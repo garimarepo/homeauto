@@ -3,9 +3,7 @@ package homeauto.resource;
 import homeauto.dao.StoreDao;
 import homeauto.entities.DaoMapping;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -31,5 +29,13 @@ public class Store {
         dao = new StoreDao();
         return DaoMapping.getAllStores(dao.getAllStore());
     }
+    @PUT
+    @Path("{store}")
+    public void createStore(@PathParam("store") String store)
+    {
+        StoreDao dao=new StoreDao();
+        dao.createStore(store);
+    }
+
 }
 

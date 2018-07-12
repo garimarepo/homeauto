@@ -24,4 +24,14 @@ public class StoreDao {
         }
         return null;
     }
+    public void createStore(String store)
+    {
+        Session session = SessionUtil.getSession();
+        session.getTransaction().begin();
+        Store st=new Store();
+        st.setName(store);
+        session.save(st);
+        session.getTransaction().commit();
+
+    }
 }

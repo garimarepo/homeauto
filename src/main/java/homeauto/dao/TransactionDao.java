@@ -1,5 +1,6 @@
 package homeauto.dao;
 
+import homeauto.entities.Transaction;
 import homeauto.resource.SessionUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -21,15 +22,15 @@ public class TransactionDao {
         }
         return null;
     }
-    public void createTransaction(double amount,Date payDate)
+    public void createTransaction(Transaction transaction)
     {
         Session session=SessionUtil.getSession();
         session.getTransaction().begin();
-        Names mem=new Names();
         Transactions t=new Transactions();
-        mem.setName(member);
-        t.setName
-        session.save(mem);
+        t.setAmount(transaction.getAmount());
+        t.setPayDate(transaction.getPayDate());
+        t.setCatId(transaction.getCatId());
+        session.save(t);
         session.getTransaction().commit();
     }
 }

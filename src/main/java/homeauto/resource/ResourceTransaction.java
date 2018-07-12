@@ -9,7 +9,6 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("transactions")
-
 public class ResourceTransaction {
     public int add(Transaction transaction) {
         return 0;
@@ -25,20 +24,19 @@ public class ResourceTransaction {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-
     public List<homeauto.entities.Transaction> getAllTransactions() {
 
         TransactionDao dao;
         dao = new TransactionDao();
         return DaoMapping.getAllTransactions(dao.getAllTransactions());
     }
+
     @PUT
-    @Path("{amount}/{payDate}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public void createTransaction(@PathParam("amount") String amount,@PathParam("payDate") String payDate)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createTransaction(Transaction transaction)
     {
         TransactionDao dao=new TransactionDao();
-        dao.createTransaction(amount,payDate);
+        dao.createTransaction(transaction);
     }
 
 }

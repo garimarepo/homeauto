@@ -1,13 +1,17 @@
 package homeauto.entities;
 
-import java.util.Date;
 
+import java.util.Date;
 
 public class Transaction {
     int id;
     double amount;
     Date payDate;
     int catId;
+
+    public Transaction() {
+
+    }
 
     public Transaction(int id, double amount, Date payDate, int catId) {
         this.id = id;

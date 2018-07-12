@@ -32,7 +32,7 @@ public class ResourceCategory {
 
     @PUT
     @Path("{name}")
-    @Produces(MediaType.APPLICATION_JSON)
+
     public void createCategory(@PathParam("name") String name)
     {
         CategoryDao dao = new CategoryDao();

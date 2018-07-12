@@ -51,7 +51,7 @@ public class Transactions {
         return catId;
     }
 
-    public void setCatId() {
+    public void setCatId(int catId) {
         this.catId = catId;
     }
 
